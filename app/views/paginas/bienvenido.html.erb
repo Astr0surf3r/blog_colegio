@@ -8,15 +8,8 @@
 
 <%= link_to 'Registrarte', new_usuario_registration_path %> <br>
 
+<% if usuario_signed_in? %>
+
 <%= link_to 'Cerrar Sesion', destroy_usuario_session_path, method: :delete %> <br>
 
-<% if user_signed_in? %>
-
-
-	si estas autenticado
-
-<% else %>
-
-    no estas autenticado 
-
-<% end %>	
+<% end %>

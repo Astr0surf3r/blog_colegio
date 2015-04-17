@@ -1,5 +1,7 @@
 class ComentariosController < ApplicationController
   
+  before_filter :authenticate_usuario!, :except => [:list, :show] 
+
   def create
 
    @comentario = Comentario.new(comentario_params)
