@@ -1,6 +1,6 @@
 class ArticulosController < ApplicationController
   
-  #before_action :set_params, :only => [:create]
+  before_action :set_articulo
 
   def new
   	@articulo = Articulo.new
@@ -22,11 +22,16 @@ class ArticulosController < ApplicationController
   end
 
   def show
+
   end
 
   private
 
   def articulo_params
   	params.require(:articulo).permit(:titulo, :descripcion)
+  end
+
+  def set_articulo
+  	@articulo = Articulo.find(params[:id])
   end
 end
