@@ -1,6 +1,6 @@
 class ArticulosController < ApplicationController
   
-  before_action :set_articulo
+  before_action :set_articulo, :only => [:show]
 
   def new
   	@articulo = Articulo.new
