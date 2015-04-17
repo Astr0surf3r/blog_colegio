@@ -1,2 +1,14 @@
 <h1>Articulos#new</h1>
 <p>Find me in app/views/articulos/new.html.erb</p>
+
+<%= form_for (@articulo) do |a| %>
+
+<%= a.label :titulo %> <br />
+<%= a.text_field :titulo %> <br />
+<%= a.label :descripcion %> <br />
+<%= a.text_area :descripcion, :size => "22x8" %>
+<br />
+<br />
+<%= a.submit 'Çrea Articulo' %>
+
+<% end %>
