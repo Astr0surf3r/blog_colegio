@@ -1,0 +1,7 @@
+<h2> TODO LOS ARTICULOS </h2>
+
+<% @articulos.each do |a| %>
+
+	<%= link_to a.titulo,  articulo_path(a) %> <br />
+
+<% end %>

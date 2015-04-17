@@ -2,6 +2,10 @@ class ArticulosController < ApplicationController
   
   before_action :set_articulo, :only => [:show]
 
+  def index
+  	@articulos = Articulo.all
+  end
+
   def new
   	@articulo = Articulo.new
   end
