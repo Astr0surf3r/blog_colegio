@@ -5,3 +5,19 @@
 
 <%= @articulo.descripcion %>
 
+<hr>
+<ul>
+<% @comentarios.each do |c| %>
+
+<li><%= c.contenido %> </li>
+
+<% end %>
+</ul>
+<h4> Escriber un comentario </h4>
+<%= form_for (@comentario) do |c| %>
+
+<%= c.text_field :contenido, :placeholder => "Inserta un comentario" %>
+<%= c.hidden_field :articulo_id, :value => params[:id] %>
+<%= c.submit 'Enviar' %>
+
+<% end %>

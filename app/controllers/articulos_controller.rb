@@ -26,7 +26,8 @@ class ArticulosController < ApplicationController
   end
 
   def show
-
+  	@comentarios = Comentario.all
+  	@comentario = Comentario.new
   end
 
   private
