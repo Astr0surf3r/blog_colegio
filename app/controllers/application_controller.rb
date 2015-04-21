@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :usuario_autenticado, :autenticado?
-  
+
   def usuario_autenticado
   	@current_user ||= Usuario.find(session[:user]) if session[:user]
   end
@@ -13,6 +13,13 @@ class ApplicationController < ActionController::Base
 
   	!!usuario_autenticado #true
 
+  end
+
+  def required_user
+
+  	if !autenticado? 
+  		redirect_to login_path
+  	end	
   end
 
 end
