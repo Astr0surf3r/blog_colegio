@@ -23,9 +23,9 @@ Rails.application.routes.draw do
 
   post 'acceso' => "sessions#create", :as => 'acceso'
 
-  post 'cerrar' => 'sessions#destroy"', :as => 'log_out'
+  post 'cerrar' => 'sessions#destroy', :as => 'log_out'
 
-  get 'cerrar' => 'sessions#destroy"'
+  get 'cerrar' => 'sessions#destroy'
 
   root "paginas#bienvenido"
 
