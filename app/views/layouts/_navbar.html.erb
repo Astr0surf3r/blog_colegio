@@ -1,5 +1,13 @@
+
+
+<% if autenticado? %>
+
+<%= link_to 'Cerrar Sesion', log_out_path %>
+
+<% else %>
+
 <%= link_to 'Acceder', login_path %> |
 
 <%= link_to 'Registrarse', new_usuario_path %> |
 
-<%= link_to 'Cerrar Sesion', log_out_path %>
+<% end %>
