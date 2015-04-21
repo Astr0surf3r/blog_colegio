@@ -1,17 +1,47 @@
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Toggle navigation
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Blog Colegio', root_path, :class => "navbar-brand" %>
+    </div>
 
-<% if autenticado? %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	<% if autenticado? %>
+        <li class="active"><%= link_to 'Agrega Categoria', new_categoria_path %></li> 
+        <li><%= link_to 'Crea Articulo', new_articulo_path %></li>
+        <li><%= link_to 'Todos los Articulos', articulos_path %></li>
+        <% else %>
 
-<%= link_to 'Agrega Categoria', new_categoria_path %> |
+        <li><%= link_to 'Acceder', login_path %> </li>
 
-<%= link_to 'Crea Articulo', new_articulo_path %> |
+		<li><%= link_to 'Registrarse', new_usuario_path %> </li>
+      	<% end %>
+      </ul>
 
-<%= link_to 'Todos los Articulos', articulos_path %> | <%= link_to 'Cerrar Sesion', log_out_path %>
+      <ul class="nav navbar-nav navbar-right">
+      	<% if autenticado? %>
+        <li><%= link_to 'Cerrar Sesion', log_out_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-<% else %>
 
-<%= link_to 'Acceder', login_path %> |
 
-<%= link_to 'Registrarse', new_usuario_path %> |
 
-<% end %>
+
+
+
+
+
+</div>

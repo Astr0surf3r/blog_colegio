@@ -2,7 +2,7 @@ class ArticulosController < ApplicationController
   
   before_action :set_articulo, :only => [:show]
 
-  before_filter :required_user
+  before_filter :required_user, :only => [:new, :create]
   
   def index
   	@articulos = Articulo.all
