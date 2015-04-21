@@ -2,7 +2,9 @@
 
 <% if autenticado? %>
 
-<%= link_to 'Cerrar Sesion', log_out_path %>
+<%= link_to 'Crea Articulo', new_articulo_path %> |
+
+<%= link_to 'Todos los Articulos', articulos_path %> | <%= link_to 'Cerrar Sesion', log_out_path %>
 
 <% else %>
 

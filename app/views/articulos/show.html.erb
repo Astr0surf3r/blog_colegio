@@ -5,6 +5,27 @@
 
 <%= @articulo.descripcion %>
 
+<p>
+	Categorias de este articulo:
+
+	<% @categorias.each do |c| %>
+
+	<%= link_to c.nombre, categoria_path(c) %>
+
+	<% end %>
+<p>
+
+Agrega Categoria
+</p>
+
+<%= form_for (@relacion) do |a| %>
+
+<%= a.collection_select(:categoria_id, Categoria.all, :id, :nombre) %>
+<%= a.hidden_field :articulo_id, :value => params[:id] %>
+
+<%= a.submit 'Asigna Categoria >>'%>
+<% end %>
+
 <hr>
 <ul>
 <% @comentarios.each do |c| %>

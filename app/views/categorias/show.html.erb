@@ -1,0 +1,18 @@
+<h1>Categorias#new</h1>
+<p>Find me in app/views/categorias/new.html.erb</p>
+
+<p> 
+
+	Estas en la Categoria <%= @categoria.nombre %>
+
+</p>
+
+<P> Los articulos de esta cataegoria son </p>
+
+<ul>
+	<% @articulos.each do |a| %>
+
+	<li><%= link_to a.titulo, articulo_path(a)  %></li>
+
+	<% end %>
+</ul>

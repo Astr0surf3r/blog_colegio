@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relacions/create'
+
   #get 'usuarios/new'
 
   #get 'usuarios/create'
@@ -18,6 +20,12 @@ Rails.application.routes.draw do
   resources :usuarios, :only => [:new, :create]
 
   #resources :sessions, :only => [:new]
+
+  resources :categorias, :only => [:new, :show]
+  
+  resources :relacions, :only => [:create]
+  
+  post 'aagrega_categoria' => "categorias#create", :as => 'categoria_index'
 
   get 'acceder' => "sessions#new", :as => 'login'
 

@@ -30,6 +30,8 @@ class ArticulosController < ApplicationController
   def show
   	@comentarios = Comentario.all
   	@comentario = Comentario.new
+    @relacion = Relacion.new
+    @categorias = @articulo.categorias
   end
 
   private
