@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  #get 'usuarios/new'
+
+  #get 'usuarios/create'
+
   #get 'paginas/bienvenido'
 
   #get 'articulos/new'
@@ -11,6 +15,18 @@ Rails.application.routes.draw do
   
   resources :comentarios, :only => [:create]
   
+  resources :usuarios, :only => [:new, :create]
+
+  #resources :sessions, :only => [:new]
+
+  get 'acceder' => "sessions#new", :as => 'login'
+
+  post 'acceso' => "sessions#create", :as => 'acceso'
+
+  post 'cerrar' => 'sessions#destroy"', :as => 'log_out'
+
+  get 'cerrar' => 'sessions#destroy"'
+
   root "paginas#bienvenido"
 
   # The priority is based upon order of creation: first created -> highest priority.

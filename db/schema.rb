@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150421163414) do
   end
 
   create_table "usuarios", force: true do |t|
-    t.string   "nombre_usario"
+    t.string   "nombre_usuario"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

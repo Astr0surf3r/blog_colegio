@@ -1,0 +1,14 @@
+
+
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<%= form_tag acceso_path do %>
+
+Nombre Usuario <%= text_field_tag :nombre_usuario %> <br />
+
+Password <%= password_field_tag :password %>
+
+<%= submit_tag 'Inicia Sesion' %>
+
+<% end %>
