@@ -2,6 +2,8 @@
 
 <% if autenticado? %>
 
+<%= link_to 'Agrega Categoria', new_categoria_path %> |
+
 <%= link_to 'Crea Articulo', new_articulo_path %> |
 
 <%= link_to 'Todos los Articulos', articulos_path %> | <%= link_to 'Cerrar Sesion', log_out_path %>
